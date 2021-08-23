@@ -70,5 +70,29 @@ const markCompleted=(id)=>{
         }
     })
 }
-
+const getDocLength=()=>{
+    db.collection("todo-items").onSnapshot((snapshot) => {
+        let items = [];
+        snapshot.docs.forEach((doc) => {
+            items.push({
+                id: doc.id, 
+                ...doc.data()
+            })
+        })
+            let itemsHTML=''
+           
+                itemsHTML += `  <div class="items-left">
+                ${items.length} items left
+            </div>
+            `
+     
+            document.querySelector(".items-left").innerHTML=itemsHTML
+          
+     
+        
+       
+      
+    })
+}
+getDocLength()
 getItems()

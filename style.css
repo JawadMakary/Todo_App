@@ -82,6 +82,10 @@ body {
   text-decoration: line-through;
   color: hsl(233, 14%, 35%);
 }
+.check-mark img {
+  visibility: hidden;
+}
+
 .check-mark {
   width: 30px;
   height: 30px;
@@ -94,6 +98,10 @@ body {
 .check-mark.checked {
   border-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+}
+.check-mark:hover img,
+.check-mark.checked img {
+  visibility: visible;
 }
 .todo-items-wrapper {
   margin-top: 30px;
