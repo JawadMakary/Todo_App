@@ -7,3 +7,17 @@ const addItem=(event)=>{
     })
     text.value=''
 }
+const getItems=()=>{
+    db.collection("todo-items").onSnapshot((snapshot) => {
+        let items = [];
+        snapshot.docs.forEach((doc) => {
+            items.push({
+                id: doc.id, 
+                ...doc.data()
+            })
+          
+        })
+      
+    })
+}
+getItems()
