@@ -52,6 +52,7 @@ const createEventListeners=()=>{
             markCompleted(checkMark.dataset.id)
         })
     })
+
 }
 const markCompleted=(id)=>{
     let item=db.collection("todo-items").doc(id)
@@ -94,5 +95,8 @@ const getDocLength=()=>{
       
     })
 }
+
+
+
 getDocLength()
 getItems()

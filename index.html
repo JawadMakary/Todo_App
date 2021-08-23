@@ -47,18 +47,25 @@
             </div>
             <div class="todo-items-info">
                 <div class="items-left">
-                    5 items left
+                     items left
                 </div>
                 <div class="items-statuses">
                     <span class="active">All</span>
-                    <span>Active</span>
-                    <span>Completed</span>
+                   
                 </div>
                 <div class="items-clear">
-                    <span>Clear Completed</span>
+                    <span id='date'></span>
                 </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+<script>
+    n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
+</script>
