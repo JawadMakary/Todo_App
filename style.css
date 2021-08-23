@@ -78,6 +78,10 @@ body {
 .new-todo-input input::placeholder {
   color: hsl(233, 14%, 35%);
 }
+.todo-text.checked {
+  text-decoration: line-through;
+  color: hsl(233, 14%, 35%);
+}
 .check-mark {
   width: 30px;
   height: 30px;
@@ -86,7 +90,8 @@ body {
   border: 2px solid hsl(237, 14%, 26%);
   transition: all 0.2s;
 }
-.check-mark:hover {
+.check-mark:hover,
+.check-mark.checked {
   border-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
   background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
 }

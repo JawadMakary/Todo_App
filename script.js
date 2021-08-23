@@ -10,29 +10,32 @@ const addItem=(event)=>{
 const getItems=()=>{
     db.collection("todo-items").onSnapshot((snapshot) => {
         let items = [];
+      
         snapshot.docs.forEach((doc) => {
             items.push({
                 id: doc.id, 
                 ...doc.data()
             })
           
+
+          
         })
+        
         generateItems(items)
       
     })
 }
-
 const generateItems=(items)=>{
     let itemsHTML=''
     items.forEach((item)=>{
         itemsHTML += `
         <div class="todo-item">
         <div class="check">
-            <div data-id="${item.id}" class="check-mark">
+            <div data-id="${item.id}" class="check-mark      ${item.status=='completed' ? 'checked':''}">
                 <img src="assets/icon-check.svg" alt="">
             </div>
         </div>
-        <div class="todo-text">
+        <div class="todo-text ${item.status=='completed' ? 'checked':''}">
            ${item.text}
         </div>
     </div>
@@ -67,4 +70,5 @@ const markCompleted=(id)=>{
         }
     })
 }
+
 getItems()
