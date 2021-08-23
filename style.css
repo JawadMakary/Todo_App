@@ -45,3 +45,48 @@ body {
 .theme {
   cursor: pointer;
 }
+.new-todo {
+  height: 70px;
+  background-color: hsl(235, 24%, 19%);
+  margin-top: 50px;
+  border-radius: 6px;
+  display: flex;
+}
+.check {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.new-todo-input {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.new-todo-input form {
+  flex-grow: 1;
+}
+.new-todo-input input {
+  width: 100%;
+  padding: 10px 0px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: hsl(234, 39%, 85%);
+  font-size: 18px;
+}
+.new-todo-input input::placeholder {
+  color: hsl(233, 14%, 35%);
+}
+.check-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid hsl(237, 14%, 26%);
+  transition: all 0.2s;
+}
+.check-mark:hover {
+  border-color: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+}
